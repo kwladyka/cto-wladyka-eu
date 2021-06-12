@@ -1,0 +1,17 @@
+{% extends "/html/base.html" %}
+{% block title %}{{title}} - archives{% endblock %}
+{% block content %}
+<div class="content-list">
+    <h1>Archives</h1>
+    {% for group in groups %}
+    <h4>{{group.group}}</h4>
+    <ul>
+        {% for post in group.posts %}
+        <li>
+            <a href="{{post.uri}}">{{post.title}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+</div>
+{% endblock %}

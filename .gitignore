@@ -1,0 +1,15 @@
+pom.xml
+pom.xml.asc
+*jar
+/lib/
+/classes/
+/target/
+/checkouts/
+.lein-deps-sum
+.lein-repl-history
+.lein-plugins/
+.lein-failures
+/public/
+/themes/simple/css/main.css
+/themes/simple/css/main.css.map
+.cpcache/

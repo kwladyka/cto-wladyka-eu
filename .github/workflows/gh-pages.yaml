@@ -1,0 +1,67 @@
+name: master -> gh-pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+          fetch-depth: 1
+#          token: ${{ secrets.GITHUB_PAT }}
+
+      - name: Install java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '11'
+
+      - name: Install clojure
+        uses: DeLaGuardo/setup-clojure@3.5
+        with:
+          cli: '1.10.3.855'
+
+      - name: Install sass
+        run: sudo npm i -g sass
+
+      - name: Generate static code
+        run: clojure -M:build
+
+      - run: pwd
+      - run: ls
+      - run: ls ./public/
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          allow_empty_commit: false
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
+#          force_orphan: true
+
+      - name: Slack notifications
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          author_name: GitHub Actions
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        if: always()
+
+#  slackNotification:
+#    needs: [build-deploy]
+#    name: Slack Notification
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Slack Notification
+#        uses: rtCamp/action-slack-notify@v2
+#        env:
+#          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
