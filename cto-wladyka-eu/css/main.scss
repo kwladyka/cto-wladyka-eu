@@ -35,6 +35,27 @@ a {
     }
 }
 
+h2, h3, h4, h5, h6 {
+    padding-bottom: .3rem;
+    border-bottom: 1px solid $lines;
+}
+h1 {
+    font-size: 2rem;
+    color: rgb(51, 51, 51);
+}
+h2 {
+    font-size: 1.7rem;
+    color: rgb(51, 51, 51);
+}
+h3 {
+    font-size: 1.4rem;
+    color: rgb(51, 51, 51);
+}
+h4 {
+    font-size: 1.2rem;
+    color: rgb(51, 51, 51);
+}
+
 .top {
     margin: 20px 0;
 
@@ -64,27 +85,6 @@ a {
     }
 }
 
-h2, h3, h4, h5, h6 {
-    padding-bottom: .3rem;
-    border-bottom: 1px solid $lines;
-}
-h1 {
-    font-size: 2rem;
-    color: rgb(51, 51, 51);
-}
-h2 {
-    font-size: 1.7rem;
-    color: rgb(51, 51, 51);
-}
-h3 {
-    font-size: 1.4rem;
-    color: rgb(51, 51, 51);
-}
-h4 {
-    font-size: 1.2rem;
-    color: rgb(51, 51, 51);
-}
-
 blockquote p {
     position: relative;
     padding: 10px 20px 10px 30px;
@@ -103,6 +103,42 @@ blockquote p {
 }
 
 article {
+    h2, h3, h4, h5 {
+        &:hover .anchor-link {
+            @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+                visibility: visible;
+            }
+        }
+        .anchor-link {
+            visibility: hidden;
+            float: left;
+            margin-left: -20px;
+            padding-right: 4px;                
+        }
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    h1 img {
+        height: 2rem;
+    }
+    h2 img {
+        height: 1.7rem;
+    }
+    h3 img {
+        height: 1.4rem;
+    }
+    h4 img {
+        height: 1.2rem;
+    }
+
+    li img {
+        height: 16px;
+    }
+
     a {
         color: $link;
 
@@ -112,9 +148,32 @@ article {
         }
     }
 
-    img {
-        max-width: 100%;
-        height: auto;
+    table, td, th {
+        border: 1px solid #d0d7de;
+    }
+    table {
+        margin-bottom: 15px;
+        word-wrap: break-word;
+
+        thead {
+            text-align: center;
+            tr {
+                th {
+                    padding: 0.4rem 0.8rem;
+                }
+            }
+        }
+        
+        tbody {
+            tr {
+                td {
+                    padding: 0.4rem 0.8rem;
+                }
+            }
+            tr:nth-child(2n) {
+                background-color: #f6f8fa;
+            }
+        }
     }
 }
 
@@ -142,6 +201,12 @@ pre {
                 text-decoration: underline;
             }
         }
+    }
+}
+
+.toc {
+    .svg-logo {
+        display: none;
     }
 }
 

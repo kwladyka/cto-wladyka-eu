@@ -13,30 +13,6 @@ a:hover {
   text-decoration: inherit;
 }
 
-.top {
-  margin: 20px 0;
-}
-.top a.btn:hover {
-  text-decoration: underline;
-}
-@media screen and (max-width: 768px) {
-  .top nav a {
-    color: #428bca;
-  }
-}
-.top .blog-title {
-  font-weight: 500;
-  font-size: 1.2rem;
-  text-decoration: none;
-}
-.top img {
-  height: 70px;
-}
-.top img.author {
-  margin-right: 10px;
-  border-radius: 4px;
-}
-
 h2, h3, h4, h5, h6 {
   padding-bottom: 0.3rem;
   border-bottom: 1px solid #DCDCDC;
@@ -62,6 +38,30 @@ h4 {
   color: #333333;
 }
 
+.top {
+  margin: 20px 0;
+}
+.top a.btn:hover {
+  text-decoration: underline;
+}
+@media screen and (max-width: 768px) {
+  .top nav a {
+    color: #428bca;
+  }
+}
+.top .blog-title {
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+.top img {
+  height: 70px;
+}
+.top img.author {
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
 blockquote p {
   position: relative;
   padding: 10px 20px 10px 30px;
@@ -78,6 +78,36 @@ blockquote p::before {
   content: "“";
 }
 
+@media screen and (min-width: 768px) {
+  article h2:hover .anchor-link, article h3:hover .anchor-link, article h4:hover .anchor-link, article h5:hover .anchor-link {
+    visibility: visible;
+  }
+}
+article h2 .anchor-link, article h3 .anchor-link, article h4 .anchor-link, article h5 .anchor-link {
+  visibility: hidden;
+  float: left;
+  margin-left: -20px;
+  padding-right: 4px;
+}
+article img {
+  max-width: 100%;
+  height: auto;
+}
+article h1 img {
+  height: 2rem;
+}
+article h2 img {
+  height: 1.7rem;
+}
+article h3 img {
+  height: 1.4rem;
+}
+article h4 img {
+  height: 1.2rem;
+}
+article li img {
+  height: 16px;
+}
 article a {
   color: #428bca;
 }
@@ -85,9 +115,24 @@ article a:hover {
   color: #428bca;
   text-decoration: underline;
 }
-article img {
-  max-width: 100%;
-  height: auto;
+article table, article td, article th {
+  border: 1px solid #d0d7de;
+}
+article table {
+  margin-bottom: 15px;
+  word-wrap: break-word;
+}
+article table thead {
+  text-align: center;
+}
+article table thead tr th {
+  padding: 0.4rem 0.8rem;
+}
+article table tbody tr td {
+  padding: 0.4rem 0.8rem;
+}
+article table tbody tr:nth-child(2n) {
+  background-color: #f6f8fa;
 }
 
 pre {
@@ -111,6 +156,10 @@ pre {
 }
 .post-meta .tags a:hover {
   text-decoration: underline;
+}
+
+.toc .svg-logo {
+  display: none;
 }
 
 .post-summary {
