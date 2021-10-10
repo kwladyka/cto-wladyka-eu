@@ -1,6 +1,6 @@
 {:site-title                   "CTO is state of the mind"
  :author                       "Krzysztof Władyka"
- :description                  "Learn technology to satisfy business needs in the most efficient way."
+ :description                  "Satisfy business needs in the simplest way using technology."
  :site-url                     "https://cto.wladyka.eu/"
  :post-root                    "posts"
  :page-root                    "pages"
@@ -21,7 +21,7 @@
  :resources                    ["CNAME" "img"]
  :keep-files                   [".git"]
  :disqus?                      true
- :disqus-shortname             "cto-wladyka"
+ ;:disqus-shortname             "cto-wladyka"
  :ignored-files                [#"\.#.*" #".*\.swp$"]
  :previews?                    true
  :posts-per-page               10
