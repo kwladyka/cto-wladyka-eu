@@ -5,6 +5,7 @@
     [compojure.route :as route]
     [ring.util.response :refer [redirect file-response]]
     [ring.util.codec :refer [url-decode]]
+    [ring.middleware.content-type :refer [wrap-content-type content-type-response]]
     [ring.server.standalone :as ring-server]
     [cryogen-core.watcher :refer [start-watcher! start-watcher-for-changes!]]
     [cryogen-core.plugins :refer [load-plugins]]
@@ -69,7 +70,8 @@
            (route/files "/")
            (route/not-found "Page not found"))
 
-(def handler (wrap-subdirectories routes))
+(def handler (-> (wrap-subdirectories routes)
+                 (wrap-content-type {:mime-types {nil "text/html"}})))
 
 (defn serve
   "Entrypoint for running via tools-deps (clojure)"

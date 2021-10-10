@@ -1,3 +1,7 @@
+## writing content
+
+clojure -X:serve
+
 todo
 
 - unique files names for CSS / JS
