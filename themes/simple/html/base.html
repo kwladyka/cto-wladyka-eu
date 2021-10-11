@@ -83,6 +83,17 @@
     </div>
 </div>
 
+<div class="footer">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-xl-8">
+                {% block bottom %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>hljs.highlightAll();</script>
 {% if post.klipse %} {{post.klipse|safe}} {% endif %}
 {% if page.klipse %} {{page.klipse|safe}} {% endif %}

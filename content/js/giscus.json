@@ -1,0 +1,8 @@
+{
+  "origins": [
+    "https://cto.wladyka.eu"
+  ],
+  "originsRegex": [
+    "http://localhost:[0-9]+"
+  ]
+}

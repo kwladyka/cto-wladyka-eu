@@ -18,7 +18,7 @@
  :sass-src                     []
  :sass-path                    "sass"
  :theme                        "simple"
- :resources                    ["CNAME" "img"]
+ :resources                    ["CNAME" "img" "js"]
  :keep-files                   [".git"]
  :disqus?                      true
  ;:disqus-shortname             "cto-wladyka"
