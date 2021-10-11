@@ -83,6 +83,9 @@
     </div>
 </div>
 
+{% block bottom %}
+{% endblock %}
+
 <script>hljs.highlightAll();</script>
 {% if post.klipse %} {{post.klipse|safe}} {% endif %}
 {% if page.klipse %} {{page.klipse|safe}} {% endif %}
