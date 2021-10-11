@@ -78,7 +78,11 @@
   [{:keys [fast] :as opts}]
   (ring-server/serve
     handler
-    (merge {:init (partial init fast)} opts)))
+    (merge {:init (partial init fast)
+            :stacktraces? true
+            :auto-refresh? true
+            :refresh-paths ["public"]
+            } opts)))
 
 (defn -main [& args]
   (serve {:port 3000, :fast ((set args) "fast")}))
