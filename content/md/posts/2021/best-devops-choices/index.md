@@ -377,3 +377,17 @@ There is a high chance you can't, because you don't use Docker and your applicat
 **What about infrastructure as a code?**
 
 This is a great idea. I am totally for it. Unfortunately so far with such simple infrastructure as I prefer I found it more frustrating, than helpful. I realized I love idea how it can work, but hate how it really works. I found tools like *Terraform* or *Google Cloud Deployment Manager* having not fully covered integrations and a few but very frustrating issues. I will definitely back to the topic. Maybe it works better today, than last time when I checked. I hope so. Today I use it partially.
+
+**What about external API tools tests like Postman for automated tests?**
+
+Don't use them. A few real examples of Postman issues:
+
+- UI limits feedback readability why something failed. People copy and paste complex HTTP response to editor to parse it in readable way.
+- People have to learn and maintenance additional tools. You need to increase your team size about people with Postman experience.
+- People have different version of Postman on they computers and this sometimes make tests not work, because of breaking changes in new versions.
+- Rewrite part of the code, because of new ver. Postman is out and there are breaking changes.
+- bugs in this tools, for example Postman have all the time bug about cache IP for domains. This is the issue when you use VPN, which change the IP of the domain. If you run tests before connect to VPN Postman will cache IP. Then you connect to VPN and there is a new IP, but Postman will still use the old one. For Postman team this bug is very low priority, because it is rare use case and they do nothing to fix it for years. Unfortunately it was the case in my work and we had to deal with it. We spent days to debug why Postman tests fail for random people in random situations.
+
+This are things which we have to deal all the time with all kind of dedicated User Interface tools for tests. Personally I recommend to write tests in your core coding language. In my case it is *Clojure* coding language. I prefer to make a separate tests which I run external in docker image to make HTTP requests and verify responses. Then I am sure software work on stating / production. Tests can be written in the same project or as a separate one for complex requests between many services.
+
+In that way I keep things simple, stable and narrow scope of the skills I need. I can code great tests easy, because I use my core language - the same which I use to develop software which I want to test. Writing tests in your core language is a pleasure versus writhing them in frustrating limited tools, which you are not truly interested in to be an expert. Also in my opinion dedicate tests for command line instead of UI is much more powerful.
