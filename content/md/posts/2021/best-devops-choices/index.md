@@ -173,7 +173,7 @@ Use it because your probably already use GitHub and this is simple and good solu
 
 Personally so far I use *Cloud Build* for *Cloud Run* projects. *Cloud Run* needs *Docker* image in *Google Container Registry*. It can be done in *GitHub Actions* but needs extra setup for security and access. It is really not a big deal, but I feel comfortable with *Cloud Build* too.
 
-*Cloud Build* and *Google Container Registry* are also cheaper, than what *GitHub* offer, but make it the least important factor to make a choice.
+*Cloud Build* and *Google Container Registry* are also cheaper, than what *GitHub* offer, but make it the last important factor to make a choice.
 
 Equivalent of *Google Cloud Build* in *AWS* is *CodeBuild*.
 
@@ -354,7 +354,7 @@ This is my recommendation:
 - <img src="/img/logo/brand-mark/google-cloud/logging.svg" class="svg-logo"> *Google Logging* - log in Google Cloud Run as a JSON or string to stdout / stderr. No extra google dependencies in your software are needed to parse JSON by *google logging*.
 - <img src="/img/logo/brand-mark/google-cloud/error-reporting.svg" class="svg-logo"> *Google Error reporting* - while you use *Google Logging* you already have *Error Reporting*.
 
-Let me make sure you understand point of the simplicity here:
+Let me make sure you understand the point of the simplicity here:
 1) You don't have to manage servers. You only tell *Cloud Run* which docker image to run.
 2) You don't need any extra library in your software to run your software in cloud. You can run anything as always in docker image.
 3) You don't need extra tools and libraries for logging. Just use stdout / stderr and *Cloud Run* will parse it. If you will print logs as *google jsonPayload* structure you can achieve even more. *Cloud Run* can parse JSON from stdout / stderr without any extra configuration.
