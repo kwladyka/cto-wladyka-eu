@@ -1,5 +1,5 @@
 {:date "2021-08-27"
- :title "What are the best DeveOps practices and tools?"
+ :title "What are the best DevOps practices and tools?"
  :tags ["devops" "deployment" "ci/cd" "google cloud" "google cloud run" "docker" "docker compose" "github actions" "kubernetes" "logs" "error reporting"]
  :toc true
  :description "Keep your infrastructure and systems as simple as possible is an advantage over everything else. Save years of your time to find the right solutions. I already did it."
