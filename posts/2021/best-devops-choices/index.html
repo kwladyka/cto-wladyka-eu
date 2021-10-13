@@ -9,7 +9,7 @@
     
     <meta name="keywords" content="docker compose, devops, github actions, error reporting, google cloud, kubernetes, deployment, logs, docker, google cloud run, ci/cd">
     
-    <title>What are the best DeveOps practices and tools?</title>
+    <title>What are the best DevOps practices and tools?</title>
     <link rel="canonical" href="https://cto.wladyka.eu/posts/2021/best-devops-choices/">
     <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="CTO is state of the mind">
     <link rel="shortcut icon" href="https://www.gravatar.com/avatar/ce810750d0cfb4c1de5a298921388556?s=32" type="image/x-icon"/>
@@ -38,7 +38,7 @@
     </script>
 
     
-<meta property="og:title" content="What are the best DeveOps practices and tools?">
+<meta property="og:title" content="What are the best DevOps practices and tools?">
 <meta property="article:author" content="https://wladyka.eu">
 <meta property="og:description" content="Keep your infrastructure and systems as simple as possible is an advantage over everything else. Save years of your time to find the right solutions. I already did it.">
 <meta property="og:type" content="website">
@@ -54,8 +54,8 @@
     },
     "datePublished": "2021-08-27",
     
-    "name": "What are the best DeveOps practices and tools?",
-    "headline": "What are the best DeveOps practices and tools?",
+    "name": "What are the best DevOps practices and tools?",
+    "headline": "What are the best DevOps practices and tools?",
     "description": "Keep your infrastructure and systems as simple as possible is an advantage over everything else. Save years of your time to find the right solutions. I already did it.",
     "articleBody": "<p>Keep your infrastructure and systems as simple as possible is an advantage over everything else. Save years of your time to find the right solutions. I already spent my.</p><p>How to design architecture for infrastructure in cloud? Which CI/CD tools to choose? How to test? How to deploy? How to collect logs? How to handle errors? How to make it simple?</p><!--more--><h2 id="rationale">Rationale</h2><p><strong>Keep your infrastructure and systems as simple as possible is an advantage over everything else.</strong> Hold on with extra features - these usually take more, than they give.</p><p>This is my greatest lesson from the mistakes I have made. I try to follow this rule of simplicity in IT and all aspects of my live. Complexity is a addicted trap which you desire and can't escape.</p><p>This may sound at first glance like one of the many sentences thrown at the show, but it took me many years to understand the power of simplicity in IT. This is the main factor for your success or fail.</p><p>In this article I share with you the simplest and the most efficient design of systems and infrastructure I know. I spent a lot of time to research this - I hope you find it valuable.</p><p>Disclaimer: I said it is simple, but simple doesn't always mean easy. First you have to learn things like Docker if you don't know them already. But trust me, it is really worth it. Now focus and read it slowly, think about what you are reading.</p><h2 id="docker-images"><img src="/img/logo/brand-mark/docker.svg" class="svg-logo" /> Docker images</h2><p><strong>Dockerize everything.</strong></p><p>In my opinion tools like <em>Heroku</em>, <em>AWS Lambda</em> or <em>Google Cloud Functions</em> are artifacts of the past. Today you can dockerize everything making it consistent and being able to run on all machines in the same way. Including software developers computers and different kind of servers.</p><p>Today we have solutions like <em>Google Cloud Run</em> which let you pay only for time when your system is processing the request or queued items. It means you can use it in similar way as <em>Google Cloud Functions</em>, but also for REST API etc. It is designed for stateless and serverless. We will back to <em>Cloud Run</em> later in this article.</p><p>Advantages of Docker images:</p><ul><li>Environment is exactly the same on all machines. There is no versions conflict and no breaking changes in environment.</li><li>You can easy move systems between <em>AWS</em>, <em>Google Cloud</em> or your own <em>Kubernetes</em>. Docker is supported everywhere.</li><li>You can use the same docker image for different cloud services in the same cloud provider. For example <em>Cloud Run</em>, <em>Cloud App Engine Flexible</em> and <em>Google Kubernetes Engine</em>.</li><li>Software developers can easy test systems on local machines in consistent way.</li><li>Software developers can easy set up dependencies on they computer using <em>docker compose</em> including databases, your other services etc. Each developer can set up the environment by one command <code>docker compose up</code>. I will extend this topic very soon.</li><li>You are sure you deploy to production exactly the same version of the system which you tested on staging environment.</li></ul><p><a href="https://docs.docker.com/engine/reference/builder/">Dockerfile documentation</a></p><h3 id="multi-stage-builds-dockerfile">Multi-stage builds Dockerfile</h3><p><strong>Always use multi-stage builds.</strong> Multi-stage builds let's you build docker images in more efficient way.</p><p>Advantages of multi-stage builds Dockerfile:</p><ul><li>cache stages to build faster next time</li><li>no tests artifacts in final image</li><li>consistent way of testing in CI/CD and developers computers</li><li>it is technically impossible to deploy by mistake system for which tests failed, because docker image will be never build then (fail on tests or build stage).</li><li>easy use in CI/CD tool and migration to different one, because you have to focus only on building docker image without rewriting code for specific CI/CD tool. It makes developing CI/CD flow and builds easier when you can run most of the flow on developers computers by <code>docker build</code> command.</li></ul><pre><code class="dockerfile"># Environment deps
 # Prepare linux system with dependencies
@@ -204,7 +204,7 @@ clojure.lang.ExceptionInfo: exception info {:custom-data "extra data to debug an
 <div class="row">
     <div class="col-12">
         <article>
-            <h1>What are the best DeveOps practices and tools?</h1>
+            <h1>What are the best DevOps practices and tools?</h1>
             <div class="post-meta">
                 2021-08-27
                 
