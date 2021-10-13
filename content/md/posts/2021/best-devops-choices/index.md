@@ -218,6 +218,8 @@ Let's stop for a while here and think about it. The concept of stateless and ser
 
 While it can sounds scary about CPU access, **stateless and serverless is exactly the architecture which you want to have**. Trust me, it is really worth to use *Cloud Run* on the first place.
 
+[Cloud Run documentation](https://cloud.google.com/run/docs)
+
 #### <img src="/img/logo/brand-mark/google-cloud/app-engine.svg" class="svg-logo"> Cloud App Engine Flexible
 
 If for some reason you want to have always running instances you can use *Google Cloud App Flexible*. You will always have access to CPU and can keep state. But here is the point: you can use exactly the same docker image. You only deploy to other cloud service.
@@ -315,7 +317,7 @@ clojure.lang.ExceptionInfo: exception info {:custom-data "extra data to debug an
 
 ### <img src="/img/logo/brand-mark/google-cloud/error-reporting.svg" class="svg-logo"> Error Reporting
 
-Errors in your software logs are detected and reported in special way.
+Errors in your software logs are detected and reported.
 
 [![Google Error Reporting list](google-error-reporting-list.png)](google-error-reporting-list.png)
 
