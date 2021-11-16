@@ -17,7 +17,7 @@ How to design architecture for infrastructure in cloud? Which CI/CD tools to cho
 
 This is my greatest lesson from the mistakes I have made. I try to follow this rule of simplicity in IT and all aspects of my live. Complexity is a addicted trap which you desire and can't escape.
 
-This may sound at first glance like one of the many sentences thrown at the show, but it took me many years to understand the power of simplicity in IT. This is the main factor for your success or fail.
+It took me many years to understand the power of simplicity in IT. This is the main factor for your success or fail.
 
 In this article I share with you the simplest and the most efficient design of systems and infrastructure I know. I spent a lot of time to research this - I hope you find it valuable.
 
@@ -177,9 +177,9 @@ Personally so far I use *Cloud Build* for *Cloud Run* projects. *Cloud Run* need
 
 Equivalent of *Google Cloud Build* in *AWS* is *CodeBuild*.
 
-[Cloud Build documentation](https://cloud.google.com/build)
+[Google Cloud Build documentation](https://cloud.google.com/build)
 
-[CodeBuild documentation](https://aws.amazon.com/codebuild/)
+[AWS CodeBuild documentation](https://aws.amazon.com/codebuild/)
 
 **tutorial step:**
 
