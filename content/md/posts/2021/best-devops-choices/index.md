@@ -156,8 +156,8 @@ I did a long research about CI/CD tools. To keep it short there are a few issues
 - unnecessary complexity of coding pipeline steps
 - if you choose to host CI/CD on your own you will have to deal with breaking changes when update CI/CD software
 - bugs
-- luck of integrations
-- luck of support
+- lack of integrations
+- lack of support
 
 Sounds general, but this things are very frustrating, time consuming and increase complexity. Just don't do this yourself. Use SaaS and pay for it. You want to focus on your software.
 
